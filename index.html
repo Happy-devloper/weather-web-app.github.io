@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Weather App in JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Linking BoxIcon for Icon -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+  </head>
+  <body>
+    <div class="main" >
+      <header></i>Weather App</header>
+      <section class="input-part">
+    
+        <div class="content">
+          <input id="city" type="text" placeholder="Enter city name" required>
+          <div class="separator"></div>
+          <button id="result">Submit</button>
+        
+          <div class="separatorGet"></div>
+          <button id="getLocation">Get Location</button>
+          </div>
+        
+        </div>
+      </section>
+
+      <section class="weather" style="display:none;">
+        <header><i class='bx bx-left-arrow-alt' id="back"></i>Weather App</header>
+
+        <div class="weather-content">
+          <div id="data-top">
+            <img id="sky" ></img>
+            <p id="temp"></p>
+            <div id="discription"></div>
+            <p id="location"></p>
+          </div>
+
+          <div class="data-bottom">
+            <div class="column feels">
+              <i class='bx bxs-thermometer'></i>
+              <div class="details">
+                <p id="feels_like">17 C</p>
+                <span>Feels Like</span>
+              </div>
+            </div>
+            <div class="column feels">
+              <i class='bx bxs-droplet-half'></i>
+              <div class="details">
+                <p id="humidity">84%</p>
+                <span>Humidity</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </body>
+
+      <script src="script.js"></script>
+</html>
