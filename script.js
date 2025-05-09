@@ -1,5 +1,4 @@
-// const apiKey = '9d45d98cb907b33b77d59916f1bcfc41';
-const apiKey = '7eab817d912539a1077384e0bdc13b54';
+const apiKey = '';
 let lat ="";
 let long ="";
 
