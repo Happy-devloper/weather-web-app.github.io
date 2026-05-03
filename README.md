@@ -4,7 +4,7 @@
 
 A beautifully designed weather application built with **vanilla JavaScript**, **HTML5**, and **CSS3**. It uses the **OpenWeather API** to deliver current conditions, a 5‑day forecast, wind, pressure, visibility, and more. The app now includes a fully functional **Celsius/Fahrenheit toggle**, **geolocation support**, and a modern, mobile‑first UI with smooth transitions.
 
-![App Screenshot](screenshot.png) <!-- Replace with an actual screenshot if available -->
+ <!-- Replace with an actual screenshot if available -->
 
 ---
 
@@ -24,7 +24,7 @@ A beautifully designed weather application built with **vanilla JavaScript**, **
 ## 🚀 Live Demo
 
 Check out the live version here:  
-🔗 [https://Happy-devloper.github.io/weather-web-app.github.io](https://Happy-devloper.github.io/weather-web-app.github.io)
+🔗 [[https://Happy-devloper.github.io/weather-web-app.github.io](https://happy-devloper.github.io/WeatherVue/)]([https://Happy-devloper.github.io/weather-web-app.github.io](https://happy-devloper.github.io/WeatherVue/))
 
 ---
 
