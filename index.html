@@ -1,60 +1,97 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Weather App in JavaScript</title>
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Linking BoxIcon for Icon -->
-    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-  </head>
-  <body>
-    <div class="main" >
-      <header></i>Weather App</header>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Weather App in JavaScript</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <main class="app-container">
+    <section class="main" role="main">
+      <header>
+        <h1>Weather App</h1>
+      </header>
       <section class="input-part">
-    
-        <div class="content">
-          <input id="city" type="text" placeholder="Enter city name" required>
+        <form class="content" role="search">
+          <label for="city" class="sr-only">Enter city name</label>
+          <input id="city" type="text" placeholder="Enter city name" required aria-describedby="city-help">
+          <div id="city-help" class="sr-only">Type a city name to get weather information</div>
           <div class="separator"></div>
-          <button id="result">Submit</button>
-        
+          <button id="result" type="submit">Submit</button>
           <div class="separatorGet"></div>
-          <button id="getLocation">Get Location</button>
-          </div>
-        
-        </div>
+          <button id="getLocation" type="button">Get Location</button>
+        </form>
       </section>
+      <div id="loading" class="loading-spinner" style="display: none;" aria-live="polite">
+        <div class="spinner"></div>
+        <p>Loading weather data...</p>
+      </div>
+      <div id="error-message" class="error-message" style="display: none;" role="alert" aria-live="assertive"></div>
+    </section>
 
-      <section class="weather" style="display:none;">
-        <header><i class='bx bx-left-arrow-alt' id="back"></i>Weather App</header>
+    <section class="weather" style="display:none;" aria-labelledby="weather-header">
+      <header>
+        <button id="back" aria-label="Go back to search"><i class='bx bx-left-arrow-alt'></i></button>
+        <h2 id="weather-header">Weather App</h2>
+        <button id="unit-toggle" aria-label="Toggle temperature unit">°C</button>
+      </header>
 
-        <div class="weather-content">
-          <div id="data-top">
-            <img id="sky" ></img>
-            <p id="temp"></p>
-            <div id="discription"></div>
-            <p id="location"></p>
-          </div>
+      <div class="weather-content">
+        <div id="data-top">
+          <img id="sky" alt="Weather icon">
+          <p id="temp" aria-label="Current temperature"></p>
+          <p id="description" aria-label="Weather description"></p>
+          <p id="location" aria-label="Location"></p>
+        </div>
 
-          <div class="data-bottom">
-            <div class="column feels">
-              <i class='bx bxs-thermometer'></i>
-              <div class="details">
-                <p id="feels_like">17 C</p>
-                <span>Feels Like</span>
-              </div>
+        <div class="data-bottom">
+          <div class="column">
+            <i class='bx bxs-thermometer' aria-hidden="true"></i>
+            <div class="details">
+              <p id="feels_like"></p>
+              <span>Feels Like</span>
             </div>
-            <div class="column feels">
-              <i class='bx bxs-droplet-half'></i>
-              <div class="details">
-                <p id="humidity">84%</p>
-                <span>Humidity</span>
-              </div>
+          </div>
+          <div class="column">
+            <i class='bx bxs-droplet-half' aria-hidden="true"></i>
+            <div class="details">
+              <p id="humidity"></p>
+              <span>Humidity</span>
+            </div>
+          </div>
+          <div class="column">
+            <i class='bx bx-wind' aria-hidden="true"></i>
+            <div class="details">
+              <p id="wind_speed"></p>
+              <span>Wind Speed</span>
+            </div>
+          </div>
+          <div class="column">
+            <i class='bx bx-tachometer' aria-hidden="true"></i>
+            <div class="details">
+              <p id="pressure"></p>
+              <span>Pressure</span>
+            </div>
+          </div>
+          <div class="column">
+            <i class='bx bx-show' aria-hidden="true"></i>
+            <div class="details">
+              <p id="visibility"></p>
+              <span>Visibility</span>
             </div>
           </div>
         </div>
-      </body>
+      </div>
+    </section>
 
-      <script src="script.js"></script>
+    <section id="forecast" style="display:none;" aria-labelledby="forecast-header">
+      <h3 id="forecast-header">5-Day Forecast</h3>
+      <div id="forecast-list" class="forecast-list" role="list"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
 </html>
